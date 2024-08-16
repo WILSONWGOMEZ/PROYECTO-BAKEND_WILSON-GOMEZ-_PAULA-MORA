@@ -136,3 +136,38 @@ body {
     border: 1px solid #ddd; /* Borde del campo de texto */
     background-color: #f9f9f9; /* Fondo gris claro */
 }
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 5px;
+  }
+  
+  .btn-warning {
+    background-color: #2f58ca;
+    color: #d5e4f3;
+  }
+  
+  .btn-warning:hover {
+    background-color: #3862d4;
+  }
+  
+  .btn-info {
+    background-color: #2f58ca;
+    color: #fff;
+  }
+  
+  .btn-info:hover {
+    background-color: #2f58ca;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    color: #fff;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+  }
