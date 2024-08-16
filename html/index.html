@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CELLW! </title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/estilosSASS.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <a class="navbar-brand" href="#">CELLW - ADQUIERE !</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Marcas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Nosotros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Accesorios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Servicio Tecnico</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Contacto</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Metodos de pago</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">///CRUD///</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Ofertas</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Convenios</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+<!-- Filtro y listado de productos -->
+<div class="row">
+    
+   <!-- Filtro por marcas -->
+<div class="col-md-3 mb-4">
+    <div class="brand-filter">
+        <h4>Filtrar por Marca</h4>
+        <ul class="list-unstyled">
+            <li><input type="checkbox" id="price1" name="price" value="Iphone">
+                <label for="price1">Iphone</label></li>
+            <li><input type="checkbox" id="price2" name="price" value="Samsung">
+                <label for="price2">Samsung</label></li>
+            <li><input type="checkbox" id="price3" name="price" value="Xiaomi">
+                <label for="price3">Xiaomi</label></li>
+            <li><input type="checkbox" id="price4" name="price" value="Huawei">
+                <label for="price4">Huawei</label></li>
+            <li><input type="checkbox" id="price5" name="price" value="OPPO">
+                <label for="price5">OPPO</label></li>
+        </ul>
+        <hr>
+        <h4>Rango de Precio</h4>
+        <ul class="list-unstyled">
+            <li><input type="checkbox" id="price1" name="price" value="0-200">
+                <label for="price1">$0 - $200</label></li>
+            <li><input type="checkbox" id="price2" name="price" value="200-400">
+                <label for="price2">$200 - $400</label></li>
+            <li><input type="checkbox" id="price3" name="price" value="400-600">
+                <label for="price3">$400 - $600</label></li>
+            <li><input type="checkbox" id="price4" name="price" value="600-800">
+                <label for="price4">$600 - $800</label></li>
+            <li><input type="checkbox" id="price5" name="price" value="800+">
+                <label for="price5">$800+</label></li>
+        </ul>
+        <hr> 
+        <h4>Memoria Interna</h4>
+        <ul class="list-unstyled">
+            <li><input type="checkbox" id="storage1" name="storage" value="32GB">
+                <label for="storage1">32 GB</label></li>
+            <li><input type="checkbox" id="storage2" name="storage" value="64GB">
+                <label for="storage2">64 GB</label></li>
+            <li><input type="checkbox" id="storage3" name="storage" value="128GB">
+                <label for="storage3">128 GB</label></li>
+            <li><input type="checkbox" id="storage4" name="storage" value="256GB">
+                <label for="storage4">256 GB</label></li>
+            <li><input type="checkbox" id="storage5" name="storage" value="512GB">
+                <label for="storage5">512 GB</label></li>
+        </ul>
+        <hr>
+        <h4>Camara frontal</h4>
+        <ul class="list-unstyled">
+            <li><input type="checkbox" id="camera1" name="camera" value="12MP">
+                <label for="camera1">12MP</label></li>
+            <li><input type="checkbox" id="camera2" name="camera" value="16MP">
+                <label for="camera2">16MP</label></li>
+            <li><input type="checkbox" id="camera3" name="camera" value="24MP">
+                <label for="camera3">24MP</label></li>
+            <li><input type="checkbox" id="camera4" name="camera" value="48MP">
+                <label for="camera4">48MP</label></li>
+            <li><input type="checkbox" id="camera5" name="camera" value="64MP">
+                <label for="camera5">64MP</label></li>
+        </ul>
+        <hr>
+        <h4>Conectividad</h4>
+        <ul class="list-unstyled">
+            <li><input type="checkbox" id="connect1" name="connect" value="4G">
+                <label for="connect1">4G</label></li>
+            <li><input type="checkbox" id="connect2" name="connect" value="5G">
+                <label for="connect2">5G</label></li>
+            <li><input type="checkbox" id="connect3" name="connect" value="Wi-Fi 6">
+                <label for="connect3">Wi-Fi 6</label></li>
+            <li><input type="checkbox" id="connect4" name="connect" value="Bluetooth 5.0">
+                <label for="connect4">Bluetooth 5.0</label></li>
+            <li><input type="checkbox" id="connect5" name="connect" value="NFC">
+                <label for="connect5">NFC</label></li>
+        </ul>
+        <hr>
+        <h4>Memoria Interna</h4>
+        <ul class="list-unstyled">
+            <li><input type="checkbox" id="storage1" name="storage" value="32GB">
+                <label for="storage1">32 GB</label></li>
+            <li><input type="checkbox" id="storage2" name="storage" value="64GB">
+                <label for="storage2">64 GB</label></li>
+            <li><input type="checkbox" id="storage3" name="storage" value="128GB">
+                <label for="storage3">128 GB</label></li>
+            <li><input type="checkbox" id="storage4" name="storage" value="256GB">
+                <label for="storage4">256 GB</label></li>
+            <li><input type="checkbox" id="storage5" name="storage" value="512GB">
+                <label for="storage5">512 GB</label></li>
+        </ul>
+        <hr>       
+        <h4>Memoria RAM</h4>
+        <ul class="list-unstyled">
+            <li><input type="checkbox" id="ram1" name="ram" value="2GB">
+                <label for="ram1">2 GB</label></li>
+            <li><input type="checkbox" id="ram2" name="ram" value="4GB">
+                <label for="ram2">4 GB</label></li>
+            <li><input type="checkbox" id="ram3" name="ram" value="6GB">
+                <label for="ram3">6 GB</label></li>
+            <li><input type="checkbox" id="ram4" name="ram" value="8GB">
+                <label for="ram4">8 GB</label></li>
+            <li><input type="checkbox" id="ram5" name="ram" value="12GB">
+                <label for="ram5">12 GB</label></li>
+        </ul>
+        <hr>
+        <h4>Tipo De Pantallaza</h4>
+        <ul class="list-unstyled">
+            <li><input type="checkbox" id="screen1" name="screen" value="LCD">
+                <label for="screen1">LCD</label></li>
+            <li><input type="checkbox" id="screen2" name="screen" value="OLED">
+                <label for="screen2">OLED</label></li>
+            <li><input type="checkbox" id="screen3" name="screen" value="AMOLED">
+                <label for="screen3">AMOLED</label></li>
+            <li><input type="checkbox" id="screen4" name="screen" value="Super AMOLED">
+                <label for="screen4">Super AMOLED</label></li>
+            <li><input type="checkbox" id="screen5" name="screen" value="IPS LCD">
+                <label for="screen5">IPS LCD</label></li>
+        </ul>
+        <hr>
+        <h4>Rango de Garantía</h4>
+        <ul class="list-unstyled">
+            <li><input type="checkbox" id="warranty1" name="warranty" value="1year">
+                <label for="warranty1">1 Año</label></li>
+            <li><input type="checkbox" id="warranty2" name="warranty" value="2years">
+                <label for="warranty2">2 Años</label></li>
+            <li><input type="checkbox" id="warranty3" name="warranty" value="3years">
+                <label for="warranty3">3 Años</label></li>
+            <li><input type="checkbox" id="warranty4" name="warranty" value="4years">
+                <label for="warranty4">4 Años</label></li>
+        </ul>
+    </div>
+</div>
+
+    <!-- Grid de celulares -->
+    <div class="container mt-3 pl-estilo1">
+
+        <h2>LOS MAS VENDIDOS</h2>
+        <hr>
+        <div class="row justify-content-around">
+ <!-- Primera fila -->
+<div class="col-md-6 col-lg-4 col-12 mb-4">
+    <div class="card">
+        <div class="card-img-container">
+            <img src="https://www.phonelectrics.com/cdn/shop/files/SamsungGalaxyS23Ultra-1_c0fcad44-664a-479e-9c85-a8d6b9f73714_1000x1000.jpg?v=1684266645" class="card-img-top" alt="Celular">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nombre del Celular</h5>
+            <p class="card-text">Descripción breve del celular. Detalles importantes y características destacadas.</p>
+            <div class="card-details">
+                <p class="card-price">$299.99</p>
+                <p class="card-specs">
+                    <span>RAM: 4GB</span> | 
+                    <span>Almacenamiento: 64GB</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="PrimeraTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+        </div>
+    </div>
+</div>
+
+ <!-- Segunda Tarjeta -->
+ <div class="col-md-6 col-lg-4 col-12 mb-4">
+    <div class="card">
+        <div class="card-img-container">
+            <img src="https://tse4.mm.bing.net/th?id=OIP.GJ4swMMT4-tBaJtwfooU-gHaHa&pid=Api&P=0&h=180" class="card-img-top" alt="Celular">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nombre del Celular</h5>
+            <p class="card-text">Descripción breve del celular. Detalles importantes y características destacadas.</p>
+            <div class="card-details">
+                <p class="card-price">$299.99</p>
+                <p class="card-specs">
+                    <span>RAM: 4GB</span> | 
+                    <span>Almacenamiento: 64GB</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="SegungaTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+        </div>
+    </div>
+</div>
+            <!-- Tercera -->
+<div class="col-md-6 col-lg-4 col-12 mb-4">
+    <div class="card">
+        <div class="card-img-container">
+            <img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCO/127913924_01/w=800,h=800,fit=pad" class="card-img-top" alt="Celular">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nombre del Celular</h5>
+            <p class="card-text">Descripción breve del celular. Detalles importantes y características destacadas.</p>
+            <div class="card-details">
+                <p class="card-price">$299.99</p>
+                <p class="card-specs">
+                    <span>RAM: 4GB</span> | 
+                    <span>Almacenamiento: 64GB</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="TerceraTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+        </div>
+    </div>
+</div>
+             <!-- Cuarta -->
+<div class="col-md-6 col-lg-4 col-12 mb-4">
+    <div class="card">
+        <div class="card-img-container">
+            <img src="https://www.phonelectrics.com/cdn/shop/files/SamsungGalaxyS23Ultra-1_c0fcad44-664a-479e-9c85-a8d6b9f73714_1000x1000.jpg?v=1684266645" class="card-img-top" alt="Celular">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nombre del Celular</h5>
+            <p class="card-text">Descripción breve del celular. Detalles importantes y características destacadas.</p>
+            <div class="card-details">
+                <p class="card-price">$299.99</p>
+                <p class="card-specs">
+                    <span>RAM: 4GB</span> | 
+                    <span>Almacenamiento: 64GB</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="CuartaTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+        </div>
+    </div>
+</div>
+            <!-- Quinta -->
+<div class="col-md-6 col-lg-4 col-12 mb-4">
+    <div class="card">
+        <div class="card-img-container">
+            <img src="https://www.phonelectrics.com/cdn/shop/files/SamsungGalaxyS23Ultra-1_c0fcad44-664a-479e-9c85-a8d6b9f73714_1000x1000.jpg?v=1684266645" class="card-img-top" alt="Celular">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nombre del Celular</h5>
+            <p class="card-text">Descripción breve del celular. Detalles importantes y características destacadas.</p>
+            <div class="card-details">
+                <p class="card-price">$299.99</p>
+                <p class="card-specs">
+                    <span>RAM: 4GB</span> | 
+                    <span>Almacenamiento: 64GB</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="QuintaTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+        </div>
+    </div>
+</div>
+            <!-- Sexta -->
+<div class="col-md-6 col-lg-4 col-12 mb-4">
+    <div class="card">
+        <div class="card-img-container">
+            <img src="https://www.phonelectrics.com/cdn/shop/files/SamsungGalaxyS23Ultra-1_c0fcad44-664a-479e-9c85-a8d6b9f73714_1000x1000.jpg?v=1684266645" class="card-img-top" alt="Celular">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nombre del Celular</h5>
+            <p class="card-text">Descripción breve del celular. Detalles importantes y características destacadas.</p>
+            <div class="card-details">
+                <p class="card-price">$299.99</p>
+                <p class="card-specs">
+                    <span>RAM: 4GB</span> | 
+                    <span>Almacenamiento: 64GB</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="SextaTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+        </div>
+    </div>
+</div>
+ <!-- Septima -->
+ <div class="col-md-6 col-lg-4 col-12 mb-4">
+    <div class="card">
+        <div class="card-img-container">
+            <img src="https://www.phonelectrics.com/cdn/shop/files/SamsungGalaxyS23Ultra-1_c0fcad44-664a-479e-9c85-a8d6b9f73714_1000x1000.jpg?v=1684266645" class="card-img-top" alt="Celular">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nombre del Celular</h5>
+            <p class="card-text">Descripción breve del celular. Detalles importantes y características destacadas.</p>
+            <div class="card-details">
+                <p class="card-price">$299.99</p>
+                <p class="card-specs">
+                    <span>RAM: 4GB</span> | 
+                    <span>Almacenamiento: 64GB</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="SeptimaTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+        </div>
+    </div>
+</div>
+            <!-- OPTAVO -->
+<div class="col-md-6 col-lg-4 col-12 mb-4">
+    <div class="card">
+        <div class="card-img-container">
+            <img src="https://www.phonelectrics.com/cdn/shop/files/SamsungGalaxyS23Ultra-1_c0fcad44-664a-479e-9c85-a8d6b9f73714_1000x1000.jpg?v=1684266645" class="card-img-top" alt="Celular">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nombre del Celular</h5>
+            <p class="card-text">Descripción breve del celular. Detalles importantes y características destacadas.</p>
+            <div class="card-details">
+                <p class="card-price">$299.99</p>
+                <p class="card-specs">
+                    <span>RAM: 4GB</span> | 
+                    <span>Almacenamiento: 64GB</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="OctavaTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+        </div>
+    </div>
+</div>
+            
+             <!-- Novena -->
+<div class="col-md-6 col-lg-4 col-12 mb-4">
+    <div class="card">
+        <div class="card-img-container">
+            <img src="https://www.phonelectrics.com/cdn/shop/files/SamsungGalaxyS23Ultra-1_c0fcad44-664a-479e-9c85-a8d6b9f73714_1000x1000.jpg?v=1684266645" class="card-img-top" alt="Celular">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nombre del Celular</h5>
+            <p class="card-text">Descripción breve del celular. Detalles importantes y características destacadas.</p>
+            <div class="card-details">
+                <p class="card-price">$299.99</p>
+                <p class="card-specs">
+                    <span>RAM: 4GB</span> | 
+                    <span>Almacenamiento: 64GB</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="NovenaTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+        </div>
+    </div>
+</div>
+             <!--Decima -->
+<div class="col-md-6 col-lg-4 col-12 mb-4">
+    <div class="card">
+        <div class="card-img-container">
+            <img src="https://www.phonelectrics.com/cdn/shop/files/SamsungGalaxyS23Ultra-1_c0fcad44-664a-479e-9c85-a8d6b9f73714_1000x1000.jpg?v=1684266645" class="card-img-top" alt="Celular">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nombre del Celular</h5>
+            <p class="card-text">Descripción breve del celular. Detalles importantes y características destacadas.</p>
+            <div class="card-details">
+                <p class="card-price">$299.99</p>
+                <p class="card-specs">
+                    <span>RAM: 4GB</span> | 
+                    <span>Almacenamiento: 64GB</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="UndecimaTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+        </div>
+    </div>
+</div>
+             <!-- Once -->
+<div class="col-md-6 col-lg-4 col-12 mb-4">
+    <div class="card">
+        <div class="card-img-container">
+            <img src="https://www.phonelectrics.com/cdn/shop/files/SamsungGalaxyS23Ultra-1_c0fcad44-664a-479e-9c85-a8d6b9f73714_1000x1000.jpg?v=1684266645" class="card-img-top" alt="Celular">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nombre del Celular</h5>
+            <p class="card-text">Descripción breve del celular. Detalles importantes y características destacadas.</p>
+            <div class="card-details">
+                <p class="card-price">$299.99</p>
+                <p class="card-specs">
+                    <span>RAM: 4GB</span> | 
+                    <span>Almacenamiento: 64GB</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="DoceabaTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+        </div>
+    </div>
+</div>
+ <!-- Doce -->
+ <div class="col-md-6 col-lg-4 col-12 mb-4">
+    <div class="card">
+        <div class="card-img-container">
+            <img src="https://www.phonelectrics.com/cdn/shop/files/SamsungGalaxyS23Ultra-1_c0fcad44-664a-479e-9c85-a8d6b9f73714_1000x1000.jpg?v=1684266645" class="card-img-top" alt="Celular">
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Nombre del Celular</h5>
+            <p class="card-text">Descripción breve del celular. Detalles importantes y características destacadas.</p>
+            <div class="card-details">
+                <p class="card-price">$299.99</p>
+                <p class="card-specs">
+                    <span>RAM: 4GB</span> | 
+                    <span>Almacenamiento: 64GB</span>
+                </p>
+            </div>
+        </div>
+        <div class="card-footer text-center">
+            <a href="DoceabaTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+        </div>
+    </div>
+</div>
+
+        <!-- FOOTER -->
+<footer class="footer col-12">
+    <div class="container-fluid">
+        <div class="row text-center">
+            <div class="col-md-6">
+                <h5 class="text-center">Últimos Modelos de Celulares</h5>
+                <p class="text-center">Descubre las novedades y los dispositivos más recientes en nuestra tienda.</p>
+                <p class="text-center">&copy; 2024 Tienda de Celulares. Todos los derechos reservados.</p>
+            </div>
+            <div class="col-md-6">
+                <div class="row">
+                    <div class="col-md-6">
+                        <h6>Enlaces Rápidos</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="#">Inicio</a></li>
+                            <li><a href="#">Acerca de</a></li>
+                            <li><a href="#">Productos</a></li>
+                            <li><a href="#">Contacto</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h6>Redes Sociales</h6>
+                        <ul class="list-unstyled">
+                            <li><a href="https://www.facebook.com/"><img
+                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ee/Logo_de_Facebook.png/220px-Logo_de_Facebook.png"
+                                        alt="Facebook"></a></li>
+                            <li><a href="https://twitter.com/"><img
+                                        src="https://www.lavanguardia.com/andro4all/hero/2023/07/icono-app-iphone.jpg?width=768&aspect_ratio=16:9&format=nowebp"
+                                        alt="Twitter"></a></li>
+                            <li><a href="https://www.instagram.com/"><img src="/img/instagram.webp"
+                                        alt="Instagram"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <p>Celulares recomendados en nuestra tienda:</p>
+                <ul>
+                    <li><a href="PrimeraTarjeta.html">iPhone 14 Pro</a></li>
+                    <li><a href="SextaTarjeta.html">Samsung Galaxy S23</a></li>
+                    <li><a href="SeptimaTarjeta.html">Google Pixel 7</a></li>
+                    <!-- Agrega más celulares recomendados según sea necesario -->
+                </ul>
+            </div>
+            <div class="col-md-6 text-center">
+                <h6>Recursos útiles</h6>
+                <ul class="list-unstyled">
+                    <li><a href="https://www.gsmarena.com/">Comparativas y análisis: GSMArena</a></li>
+                    <li><a href="https://www.phonearena.com/">Noticias de móviles: PhoneArena</a></li>
+                    <li><a href="https://www.androidauthority.com/">Guías y tutoriales: Android Authority</a></li>
+                </ul>
+                <p class="mb-0">Contáctanos: celulares@tienda.com | Teléfono: (320) 456-7890</p>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Bootstrap JS y Script personalizado -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+<script src="/js/script.js"></script>
+</body>
+</html>

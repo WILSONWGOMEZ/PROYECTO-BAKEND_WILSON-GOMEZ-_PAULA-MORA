@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarjeta de Celular</title>
+    <link rel="stylesheet" href="/css/Tarjetas.css">
+</head>
+
+<body>
+    <!-- Tarjeta de Celular -->
+    <div class="card">
+        <!-- Imagen del celular -->
+        <div class="card-img-container">
+            <img src="https://es.web.img2.acsta.net/pictures/23/07/20/11/29/5479684.jpg" class="card-img-top" alt="Celular">
+        </div>
+
+        <!-- Detalles del celular -->
+        <div class="card-body container">
+            <h5 class="card-title">iPhone 14 Pro</h5>
+            <p class="card-text text-justify">
+                Descripción: El iPhone 14 Pro es el último dispositivo de Apple, equipado con la última tecnología en cámaras, rendimiento de alta velocidad y pantalla OLED super retina. Diseñado para aquellos que buscan el máximo rendimiento en un smartphone.
+            </p>
+
+            <h6 class="card-subtitle mb-2 text-muted">Especificaciones</h6>
+            <p class="card-text">
+                Pantalla: 6.1 pulgadas OLED<br>
+                Procesador: A16 Bionic<br>
+                Memoria: 128GB / 256GB / 512GB<br>
+                Cámaras: 48MP principal, 12MP ultra gran angular<br>
+                Batería: 3200 mAh
+            </p>
+
+            <!-- Calificación -->
+            <div class="rating">
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9733;</span>
+                <span class="star">&#9734;</span>
+            </div>
+
+            <!-- Botones CRUD -->
+            <div class="container text-center mt-3">
+                <button class="btn btn-warning">Actualizar</button>
+                <button class="btn btn-info">Leer</button>
+                <button class="btn btn-danger">Borrar</button>
+            </div>
+
+            <!-- Pie de página -->
+            <div class="container pie-pagina mt-4">
+                <div class="row">
+                    <div class="col-md-12">
+                        <!-- Campos de entrada para interacciones CRUD -->
+                        <div class="card-footer">
+                            <input type="text" id="productNameInput" class="form-control mb-2" placeholder="Nombre del celular...">
+                            <input type="text" id="opinionInput" class="form-control mb-2" placeholder="Escribe tu opinión...">
+                            <input type="text" id="suggestionInput" class="form-control mb-2" placeholder="Escribe qué celular te gustaría ver...">
+                            <input type="text" id="websiteInput" class="form-control mb-2" placeholder="Escribe tu opinión sobre la página web...">
+
+                            <!-- Botón para enviar opiniones -->
+                            <button class="btn btn-secondary btn-block" onclick="enviarOpiniones()">Enviar Opiniones</button>
+                        </div>
+
+                        <!-- Botón de volver -->
+                        <div class="card-body text-center mt-3">
+                            <a href="index.html" class="btn btn-primary">VOLVER</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function enviarOpiniones() {
+            // Obtener los valores de los campos de entrada
+            var productName = document.getElementById("productNameInput").value;
+            var opinion = document.getElementById("opinionInput").value;
+            var suggestion = document.getElementById("suggestionInput").value;
+            var website = document.getElementById("websiteInput").value;
+
+            // Crear un objeto con las opiniones
+            var opiniones = {
+                "productName": productName,
+                "opinion": opinion,
+                "suggestion": suggestion,
+                "website": website
+            };
+
+            // Obtener las opiniones guardadas en el almacenamiento local
+            var storedOpiniones = JSON.parse(localStorage.getItem("opiniones")) || [];
+
+            // Agregar la nueva opinión a la lista de opiniones guardadas
+            storedOpiniones.push(opiniones);
+
+            // Guardar las opiniones actualizadas en el almacenamiento local
+            localStorage.setItem("opiniones", JSON.stringify(storedOpiniones));
+
+            // Redireccionar a la página "Opiniones.html"
+            window.location.href = "Opiniones.html";
+        }
+    </script>
+</body>
+
+</html>
