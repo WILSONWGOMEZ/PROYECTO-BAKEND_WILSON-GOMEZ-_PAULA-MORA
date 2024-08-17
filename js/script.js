@@ -1,78 +1,54 @@
-import React, { useState } from 'react';
 
-// Ejemplo de datos
-const items = [
-  { id: 1, name: 'Item 1', category: 'Category 1', price: 10 },
-  { id: 2, name: 'Item 2', category: 'Category 2', price: 20 },
-  // Más datos...
-];
+    document.addEventListener('DOMContentLoaded', () => {
+        // Obtener todos los elementos de producto
+        const products = document.querySelectorAll('.product');
 
-const App = () => {
-  // Estados para filtros
-  const [filters, setFilters] = useState({
-    category: '',
-    minPrice: 0,
-    maxPrice: 100,
-  });
+        // Función para aplicar filtros
+        function applyFilters() {
+            // Obtener todos los filtros seleccionados
+            const selectedBrands = Array.from(document.querySelectorAll('input[name="brand"]:checked')).map(cb => cb.value);
+            const selectedPrices = Array.from(document.querySelectorAll('input[name="price"]:checked')).map(cb => cb.value);
+            const selectedStorages = Array.from(document.querySelectorAll('input[name="storage"]:checked')).map(cb => cb.value);
+            const selectedCameras = Array.from(document.querySelectorAll('input[name="camera"]:checked')).map(cb => cb.value);
+            const selectedConnects = Array.from(document.querySelectorAll('input[name="connect"]:checked')).map(cb => cb.value);
+            const selectedRams = Array.from(document.querySelectorAll('input[name="ram"]:checked')).map(cb => cb.value);
+            const selectedScreens = Array.from(document.querySelectorAll('input[name="screen"]:checked')).map(cb => cb.value);
+            const selectedWarranties = Array.from(document.querySelectorAll('input[name="warranty"]:checked')).map(cb => cb.value);
 
-  // Función para manejar cambios en los filtros
-  const handleFilterChange = (e) => {
-    const { name, value } = e.target;
-    setFilters({ ...filters, [name]: value });
-  };
+            // Filtrar los productos
+            products.forEach(product => {
+                const brand = product.getAttribute('data-brand');
+                const price = product.getAttribute('data-price');
+                const storage = product.getAttribute('data-storage');
+                const camera = product.getAttribute('data-camera');
+                const connect = product.getAttribute('data-connect');
+                const ram = product.getAttribute('data-ram');
+                const screen = product.getAttribute('data-screen');
+                const warranty = product.getAttribute('data-warranty');
 
-  // Filtrar items según los filtros
-  const filteredItems = items.filter(item => {
-    return (
-      (filters.category ? item.category.includes(filters.category) : true) &&
-      (item.price >= filters.minPrice && item.price <= filters.maxPrice)
-    );
-  });
+                const matchesBrand = selectedBrands.length === 0 || selectedBrands.includes(brand);
+                const matchesPrice = selectedPrices.length === 0 || selectedPrices.includes(price);
+                const matchesStorage = selectedStorages.length === 0 || selectedStorages.includes(storage);
+                const matchesCamera = selectedCameras.length === 0 || selectedCameras.includes(camera);
+                const matchesConnect = selectedConnects.length === 0 || selectedConnects.includes(connect);
+                const matchesRam = selectedRams.length === 0 || selectedRams.includes(ram);
+                const matchesScreen = selectedScreens.length === 0 || selectedScreens.includes(screen);
+                const matchesWarranty = selectedWarranties.length === 0 || selectedWarranties.includes(warranty);
 
-  return (
-    <div>
-      <h1>Items List</h1>
-      {/* Filtros */}
-      <div>
-        <label>
-          Category:
-          <input
-            type="text"
-            name="category"
-            value={filters.category}
-            onChange={handleFilterChange}
-          />
-        </label>
-        <label>
-          Min Price:
-          <input
-            type="number"
-            name="minPrice"
-            value={filters.minPrice}
-            onChange={handleFilterChange}
-          />
-        </label>
-        <label>
-          Max Price:
-          <input
-            type="number"
-            name="maxPrice"
-            value={filters.maxPrice}
-            onChange={handleFilterChange}
-          />
-        </label>
-      </div>
+                // Mostrar u ocultar productos según los filtros
+                if (matchesBrand && matchesPrice && matchesStorage && matchesCamera && matchesConnect && matchesRam && matchesScreen && matchesWarranty) {
+                    product.style.display = 'block';
+                } else {
+                    product.style.display = 'none';
+                }
+            });
+        }
 
-      {/* Mostrar items filtrados */}
-      <ul>
-        {filteredItems.map(item => (
-          <li key={item.id}>
-            {item.name} - {item.category} - ${item.price}
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-};
+        // Agregar evento de cambio a los filtros
+        document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+            checkbox.addEventListener('change', applyFilters);
+        });
 
-export default App;
+        // Aplicar filtros al cargar la página
+        applyFilters();
+    });

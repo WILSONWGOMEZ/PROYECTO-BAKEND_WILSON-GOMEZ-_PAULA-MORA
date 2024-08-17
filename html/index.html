@@ -13,6 +13,8 @@
 </head>
 
 <body>
+    <script src="/js/script.js"></script>
+
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <a class="navbar-brand" href="#">CELLWD - ADQUIERE !</a>
@@ -68,13 +70,15 @@
                     <label for="brand3">Xiaomi</label></li>
                 <li><input type="checkbox" id="brand4" name="brand" value="Huawei">
                     <label for="brand4">Huawei</label></li>
-                <li><input type="checkbox" id="brand5" name="brand" value="OPPO">
-                    <label for="brand5">OPPO</label></li>
+                <li><input type="checkbox" id="brand5" name="brand" value="Oppo">
+                    <label for="brand5">Oppo</label></li>
+                    <li><input type="checkbox" id="brand6" name="brand" value="Google">
+                        <label for="brand5">Google</label></li>
             </ul>
             <hr>
             <h4>Rango de Precio</h4>
             <ul class="list-unstyled">
-                <li><input type="checkbox" id="price1" name="price" value="0-200">
+                <li><input type="checkbox" id="price1" name="price" value="200">
                     <label for="price1">$0 - $200</label></li>
                 <li><input type="checkbox" id="price2" name="price" value="200-400">
                     <label for="price2">$200 - $400</label></li>
@@ -82,7 +86,7 @@
                     <label for="price3">$400 - $600</label></li>
                 <li><input type="checkbox" id="price4" name="price" value="600-800">
                     <label for="price4">$600 - $800</label></li>
-                <li><input type="checkbox" id="price5" name="price" value="800+">
+                <li><input type="checkbox" id="price5" name="price" value="900+">
                     <label for="price5">$800+</label></li>
             </ul>
             <hr>
@@ -178,28 +182,46 @@
         <hr>
         <div class="row justify-content-around">
  <!-- Primera fila -->
-<div class="col-md-6 col-lg-4 col-12 mb-4">
-    <div class="card">
-        <div class="card-img-container">
-</div>
-<div class="card-body">
-    <h5 class="card-title">iPhone 14 Pro</h5>
-    <p class="card-text">El iPhone 14 Pro lleva la innovación al siguiente nivel con su pantalla Super Retina XDR de 6.1 pulgadas, Dynamic Island, y el chip A16 Bionic, que ofrece un rendimiento inigualable. Equipado con un sistema de cámara cuádruple, captura imágenes impresionantes en cualquier condición de luz.</p>
-    <div class="card-details">
-        <p class="card-price">$1099.99</p>
-        <p class="card-specs">
-            <span>RAM: 6GB</span> | 
-            <span>Almacenamiento: 128GB</span>
-                </p>
-            </div>
-        </div>
-        <div class="card-footer text-center">
-            <a href="PrimeraTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+ <div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+ data-brand="Iphone" 
+ data-price="1099.99" 
+ data-storage="128GB" 
+ data-camera="12MP" 
+ data-connect="5G" 
+ data-ram="6GB" 
+ data-screen="Super Retina XDR" 
+ data-warranty="1year">
+<div class="card">
+    <div class="card-img-container">
+        <img src="https://www.apple.com/newsroom/images/product/iphone/geo/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907-geo_inline.jpg.large.jpg" class="card-img-top" alt="iPhone 14 Pro">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">iPhone 14 Pro</h5>
+        <p class="card-text">El iPhone 14 Pro lleva la innovación al siguiente nivel con su pantalla Super Retina XDR de 6.1 pulgadas, Dynamic Island, y el chip A16 Bionic, que ofrece un rendimiento inigualable. Equipado con un sistema de cámara cuádruple, captura imágenes impresionantes en cualquier condición de luz.</p>
+        <div class="card-details">
+            <p class="card-price">$1099.99</p>
+            <p class="card-specs">
+                <span>RAM: 6GB</span> | 
+                <span>Almacenamiento: 128GB</span>
+            </p>
         </div>
     </div>
+    <div class="card-footer text-center">
+        <a href="PrimeraTarjeta.html" class="btn btn-primary">Ver Detalles</a>
+    </div>
 </div>
+</div>
+
 <!-- Segunda Tarjeta -->
-<div class="col-md-6 col-lg-4 col-12 mb-4">
+<div class="col-md-6 col-lg-4 col-12 mb-4 product"
+     data-brand="Xiaomi"
+     data-price="300"
+     data-storage="64GB"
+     data-camera="64MP"
+     data-connect="4G"
+     data-ram="4GB"
+     data-screen="AMOLED"
+     data-warranty="2years">
     <div class="card">
         <div class="card-img-container">
             <img src="https://technologystore2006.com/wp-content/uploads/2022/02/xiamomi-note11-azul-128.webp" class="card-img-top" alt="Xiaomi Redmi Note 11">
@@ -221,8 +243,17 @@
     </div>
 </div>
 
+
 <!-- Tercera -->
-<div class="col-md-6 col-lg-4 col-12 mb-4">
+<div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+data-brand="Samsung" 
+data-price="499.99" 
+data-storage="128GB" 
+data-camera="64MP" 
+data-connect="5G" 
+data-ram="6GB" 
+data-screen="Super AMOLED" 
+data-warranty="2years">
     <div class="card">
         <div class="card-img-container">
             <img src="https://m.media-amazon.com/images/I/71D604+9XcL._AC_SL1000_.jpg" class="card-img-top" alt="Samsung Galaxy A53">
@@ -245,7 +276,15 @@
 </div>
 
 <!-- Cuarta -->
-<div class="col-md-6 col-lg-4 col-12 mb-4">
+<div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+data-brand="Samsung" 
+data-price="1199.99" 
+data-storage="256GB" 
+data-camera="200MP" 
+data-connect="5G" 
+data-ram="12GB" 
+data-screen="Dynamic AMOLED 2X" 
+data-warranty="2years">
     <div class="card">
         <div class="card-img-container">
             <img src="https://www.phonelectrics.com/cdn/shop/files/SamsungGalaxyS23Ultra-1_c0fcad44-664a-479e-9c85-a8d6b9f73714_1000x1000.jpg?v=1684266645" class="card-img-top" alt="Samsung Galaxy S23 Ultra">
@@ -268,7 +307,16 @@
 </div>
 
 <!-- Quinta -->
-<div class="col-md-6 col-lg-4 col-12 mb-4">
+<div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+    data-brand="Google" 
+    data-price="899.99" 
+    data-storage="128GB" 
+    data-camera="50MP" 
+    data-connect="5G" 
+    data-ram="12GB" 
+    data-screen="OLED" 
+    data-warranty="2years">
+
     <div class="card">
         <div class="card-img-container">
             <img src="https://imei.org/storage/files/images/11339/thumb/google-pixel-7-pro.png" class="card-img-top" alt="Google Pixel 7 Pro">
@@ -291,7 +339,15 @@
 </div>
 
 <!-- Sexta -->
-<div class="col-md-6 col-lg-4 col-12 mb-4">
+<div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+data-brand="OnePlus" 
+data-price="899.99" 
+data-storage="256GB" 
+data-camera="48MP" 
+data-connect="5G" 
+data-ram="8GB" 
+data-screen="AMOLED" 
+data-warranty="2years">
     <div class="card">
         <div class="card-img-container">
             <img src="https://co.celulares.com/fotos/oneplus-10-pro-2-93858-g-alt.jpg" class="card-img-top" alt="OnePlus 10 Pro">
@@ -314,7 +370,15 @@
 </div>
 
 <!-- Séptima -->
-<div class="col-md-6 col-lg-4 col-12 mb-4">
+<div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+data-brand="Iphone" 
+data-price="1099.99" 
+data-storage="128GB" 
+data-camera="12MP" 
+data-connect="5G" 
+data-ram="6GB" 
+data-screen="Super AMOLED" 
+data-warranty="1year">
     <div class="card">
         <div class="card-img-container">
             <img src="https://m.media-amazon.com/images/I/61i8Vjb17SL.jpg" class="card-img-top" alt="iPhone 13 Pro Max">
@@ -337,7 +401,15 @@
 </div>
 
 <!-- Octava -->
-<div class="col-md-6 col-lg-4 col-12 mb-4">
+<div  class="col-md-6 col-lg-4 col-12 mb-4 product" 
+    data-brand="Sony" 
+    data-price="1199.99" 
+    data-storage="256GB" 
+    data-camera="12MP" 
+    data-connect="5G" 
+    data-ram="12GB" 
+    data-screen="OLED" 
+    data-warranty="2years">
     <div class="card">
         <div class="card-img-container">
             <img src="https://m.media-amazon.com/images/I/51GZMxvwFbL._AC_SL1500_.jpg" class="card-img-top" alt="Sony Xperia 1 IV">
@@ -360,7 +432,15 @@
 </div>
 
 <!-- Novena -->
-<div class="col-md-6 col-lg-4 col-12 mb-4">
+<div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+        data-brand="Huawei" 
+        data-price="899.99" 
+        data-storage="256GB" 
+        data-camera="50MP" 
+        data-connect="5G" 
+        data-ram="8GB" 
+        data-screen="OLED" 
+        data-warranty="2years">
     <div class="card">
         <div class="card-img-container">
             <img src="https://m.media-amazon.com/images/I/617X41AgpzL._AC_SL1500_.jpg" class="card-img-top" alt="Huawei P50 Pro">
@@ -383,7 +463,15 @@
 </div>
 
 <!-- Décima -->
-<div class="col-md-6 col-lg-4 col-12 mb-4">
+<div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+            data-brand="Oppo" 
+            data-price="1099.99" 
+            data-storage="256GB" 
+            data-camera="50MP" 
+            data-connect="5G" 
+            data-ram="12GB" 
+            data-screen="AMOLED" 
+            data-warranty="2years">
     <div class="card">
         <div class="card-img-container">
             <img src="https://co.celulares.com/fotos/oppo-find-x5-pro-93548-g-alt.jpg" class="card-img-top" alt="Oppo Find X5 Pro">
@@ -406,7 +494,15 @@
 </div>
 
 <!-- Once -->
-<div class="col-md-6 col-lg-4 col-12 mb-4">
+<div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+        data-brand="Xiaomi" 
+        data-price="999.99" 
+        data-storage="256GB" 
+        data-camera="50MP" 
+        data-connect="5G" 
+        data-ram="12GB" 
+        data-screen="AMOLED" 
+        data-warranty="2years">
     <div class="card">
         <div class="card-img-container">
             <img src="https://www.losdistribuidores.com/wp-content/uploads/2023/05/xiaomi-12-pro-2.webp" class="card-img-top" alt="Xiaomi 12 Pro">
@@ -429,7 +525,15 @@
 </div>
 
 <!-- Doce -->
-<div class="col-md-6 col-lg-4 col-12 mb-4">
+<div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+            data-brand="Motorola" 
+            data-price="799.99" 
+            data-storage="256GB" 
+            data-camera="50MP" 
+            data-connect="5G" 
+            data-ram="12GB" 
+            data-screen="AMOLED" 
+            data-warranty="2years">
     <div class="card">
         <div class="card-img-container">
             <img src="https://i.blogs.es/602692/motorola-edge-30-pro-trasera/450_1000.jpg" class="card-img-top" alt="Motorola Edge 30 Pro">
