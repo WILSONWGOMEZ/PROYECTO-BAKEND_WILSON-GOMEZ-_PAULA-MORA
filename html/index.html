@@ -42,15 +42,6 @@
                 <li class="nav-item">
                     <a class="nav-link" href="pagos.html">Metodos de pago</a>
                 </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">///CRUD///</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Ofertas</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Convenios</a>
-                </li>
             </ul>
         </div>
     </nav>
@@ -77,18 +68,21 @@
             </ul>
             <hr>
             <h4>Rango de Precio</h4>
-            <ul class="list-unstyled">
-                <li><input type="checkbox" id="price1" name="price" value="200">
-                    <label for="price1">$0 - $200</label></li>
-                <li><input type="checkbox" id="price2" name="price" value="200-400">
-                    <label for="price2">$200 - $400</label></li>
-                <li><input type="checkbox" id="price3" name="price" value="400-600">
-                    <label for="price3">$400 - $600</label></li>
-                <li><input type="checkbox" id="price4" name="price" value="600-800">
-                    <label for="price4">$600 - $800</label></li>
-                <li><input type="checkbox" id="price5" name="price" value="900+">
-                    <label for="price5">$800+</label></li>
-            </ul>
+        <ul class="list-unstyled">
+            <li><input type="checkbox" id="price1" name="price" value="0-199">
+                <label for="price1">$0 - $199</label></li>
+            <li><input type="checkbox" id="price2" name="price" value="200-399">
+                <label for="price2">$200 - $399</label></li>
+            <li><input type="checkbox" id="price3" name="price" value="400-699">
+                <label for="price3">$400 - $699</label></li>
+            <li><input type="checkbox" id="price4" name="price" value="700-800">
+                <label for="price4">$700 - $800</label></li>
+            <li><input type="checkbox" id="price5" name="price" value="800-999">
+                <label for="price5">$800-999</label></li>
+                <li><input type="checkbox" id="price6" name="price" value="1000-3000">
+                    <label for="price5">$1000-3000</label></li>
+        </ul>
+        </ul>
             <hr>
             <h4>Memoria Interna</h4>
             <ul class="list-unstyled">
@@ -230,7 +224,7 @@
             <h5 class="card-title">Xiaomi Redmi Note 11</h5>
             <p class="card-text">Un teléfono económico con una pantalla AMOLED de 6.43 pulgadas, cámara cuádruple de 50 MP y una batería de 5000 mAh para un uso prolongado.</p>
             <div class="card-details">
-                <p class="card-price">$299.99</p>
+                <p class="card-price">$300</p>
                 <p class="card-specs">
                     <span>RAM: 4GB</span> | 
                     <span>Almacenamiento: 64GB</span>
@@ -247,7 +241,7 @@
 <!-- Tercera -->
 <div class="col-md-6 col-lg-4 col-12 mb-4 product" 
 data-brand="Samsung" 
-data-price="499.99" 
+data-price="349.99" 
 data-storage="128GB" 
 data-camera="64MP" 
 data-connect="5G" 
@@ -341,7 +335,7 @@ data-warranty="2years">
 <!-- Sexta -->
 <div class="col-md-6 col-lg-4 col-12 mb-4 product" 
 data-brand="OnePlus" 
-data-price="899.99" 
+data-price="799.99" 
 data-storage="256GB" 
 data-camera="48MP" 
 data-connect="5G" 
@@ -403,7 +397,7 @@ data-warranty="1year">
 <!-- Octava -->
 <div  class="col-md-6 col-lg-4 col-12 mb-4 product" 
     data-brand="Sony" 
-    data-price="1199.99" 
+    data-price="1299.99" 
     data-storage="256GB" 
     data-camera="12MP" 
     data-connect="5G" 
@@ -449,7 +443,7 @@ data-warranty="1year">
             <h5 class="card-title">Huawei P50 Pro</h5>
             <p class="card-text">El Huawei P50 Pro destaca por su impresionante cámara cuádruple de 50 MP, pantalla OLED de 6.6 pulgadas y un diseño elegante.</p>
             <div class="card-details">
-                <p class="card-price">$999.99</p>
+                <p class="card-price">$899.99</p>
                 <p class="card-specs">
                     <span>RAM: 8GB</span> | 
                     <span>Almacenamiento: 256GB</span>
@@ -480,7 +474,7 @@ data-warranty="1year">
             <h5 class="card-title">Oppo Find X5 Pro</h5>
             <p class="card-text">El Oppo Find X5 Pro ofrece una pantalla AMOLED de 6.7 pulgadas y una cámara de 50 MP con estabilización óptica para fotos y videos nítidos.</p>
             <div class="card-details">
-                <p class="card-price">$899.99</p>
+                <p class="card-price">$1099.99</p>
                 <p class="card-specs">
                     <span>RAM: 12GB</span> | 
                     <span>Almacenamiento: 256GB</span>
@@ -496,7 +490,7 @@ data-warranty="1year">
 <!-- Once -->
 <div class="col-md-6 col-lg-4 col-12 mb-4 product" 
         data-brand="Xiaomi" 
-        data-price="999.99" 
+        data-price="749.99" 
         data-storage="256GB" 
         data-camera="50MP" 
         data-connect="5G" 
@@ -542,7 +536,7 @@ data-warranty="1year">
             <h5 class="card-title">Motorola Edge 30 Pro</h5>
             <p class="card-text">El Motorola Edge 30 Pro ofrece un excelente rendimiento con su procesador Snapdragon 8 Gen 1 y una pantalla OLED de 6.7 pulgadas.</p>
             <div class="card-details">
-                <p class="card-price">$699.99</p>
+                <p class="card-price">$799.99</p>
                 <p class="card-specs">
                     <span>RAM: 8GB</span> | 
                     <span>Almacenamiento: 128GB</span>
