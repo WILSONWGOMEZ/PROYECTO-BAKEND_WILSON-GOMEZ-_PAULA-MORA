@@ -133,3 +133,4 @@ button::before {
     height: 300%;
     background-color: rgba(255, 255, 255, 0.2);
     transform: translate(-50%, -50%) scale
+}

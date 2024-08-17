@@ -1,83 +1,161 @@
-// Variables
-$primary-color: #2c3e50;
-$secondary-color: #3498db;
-$background-color: #f9f9f9;
-$text-color: #333;
-$header-font: 'Arial', sans-serif;
-$body-font: 'Helvetica', sans-serif;
-
-// Mixins
-@mixin container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
-// Global Styles
+/* Estilo Global */
 body {
-  font-family: $body-font;
-  color: $text-color;
-  background-color: $background-color;
+  font-family: 'Roboto', sans-serif;
+  background-color: #121212;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  color: #FFFFFF;
 }
 
-h1, h2 {
-  font-family: $header-font;
-  color: $primary-color;
-  margin-bottom: 10px;
-}
-
-p {
-  font-size: 1.2em;
-  margin: 10px 0;
-}
-
-// Header
 header {
-  background-color: $primary-color;
-  color: #fff;
-  padding: 20px 0;
+  background-color: #1E90FF; // Azul oscuro
+  padding: 20px;
   text-align: center;
+  border-bottom: 4px solid #FFFFFF;
 
-  h1 {
-    margin: 0;
-    font-size: 2.5em;
+  .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+
+    img {
+      height: 60px;
+      width: 60px;
+    }
   }
 }
 
-// Container
-.container {
-  @include container;
-  background-color: #fff;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  padding: 40px;
+h1 {
+  color: #FFFFFF;
+  font-size: 2.5em;
+  margin: 0;
+  letter-spacing: 1.5px;
 }
 
-// Sections
-.section {
+main {
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.service-info {
   margin-bottom: 40px;
 
   h2 {
-    font-size: 2em;
-    color: $primary-color;
+    color: #1E90FF;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
   }
 
   p {
     font-size: 1.2em;
-    color: $text-color;
+    line-height: 1.6;
+    color: #DDDDDD;
+    max-width: 800px;
+    margin: 0 auto;
   }
 }
 
-// Footer
+.services {
+  padding: 20px 0;
+
+  h2 {
+    color: #1E90FF;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+
+  .service-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    justify-items: center;
+    align-items: start;
+  }
+
+  .service {
+    background-color: #1C1C1C;
+    padding: 30px;
+    border-radius: 20px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    max-width: 350px;
+
+    &:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    img {
+      width: 80px;
+      height: 80px;
+      margin-bottom: 20px;
+      transition: transform 0.3s;
+
+      &:hover {
+        transform: rotate(10deg) scale(1.1);
+      }
+    }
+
+    h3 {
+      color: #1E90FF;
+      font-size: 1.8em;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+    }
+
+    p {
+      font-size: 1em;
+      line-height: 1.6;
+      color: #DDDDDD;
+      margin: 0;
+    }
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 300%;
+      height: 300%;
+      background: radial-gradient(circle, rgba(30,144,255,0.2) 0%, rgba(30,144,255,0) 70%);
+      transition: all 0.5s;
+      z-index: 1;
+    }
+
+    &:hover:before {
+      left: 0;
+    }
+  }
+}
+
 footer {
+  background-color: #1E90FF;
+  padding: 15px;
   text-align: center;
-  padding: 10px 0;
-  background-color: $primary-color;
-  color: #fff;
-  
+  border-top: 4px solid #FFFFFF;
+
   p {
-    margin: 0;
+    margin: 10px 0;
+    font-size: 1em;
+  }
+
+  a {
+    color: #FFFFFF;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #121212;
+      text-decoration: underline;
+    }
   }
 }
