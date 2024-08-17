@@ -8,7 +8,7 @@ body {
 
 .navbar {
     margin-bottom: 20px;
-    color: #9e2f2f; /* Cambia este valor por el color que desees */
+    color: #000000; /* Cambia este valor por el color que desees */
 }
 
 .navbar-brand {
@@ -21,6 +21,8 @@ body {
 .nav-link {
     font-size: 1.1rem;
     margin-right: 15px;
+    color: #003366; /* Azul oscuro */
+
     
 
 }
