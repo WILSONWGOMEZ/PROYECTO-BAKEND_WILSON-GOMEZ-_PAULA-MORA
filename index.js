@@ -10,7 +10,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'index.html'));
 });
-
+// Ruta para servir el index.html
+app.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'public', 'html', 'pagos.html'));
+});
 
 app.listen(port, () => {
     console.log(`Servidor corriendo en http://localhost:${port}`);
