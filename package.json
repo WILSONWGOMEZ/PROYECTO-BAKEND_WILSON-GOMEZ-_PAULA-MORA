@@ -1,22 +1,7 @@
 {
   "dependencies": {
-<<<<<<< HEAD
     "body-parser": "^1.20.2",
     "express": "^4.19.2",
     "mysql2": "^3.11.0"
-=======
-    "bcryptjs": "^2.4.3",
-    "connect-flash": "^0.1.1",
-    "ejs": "^3.1.10",
-    "express": "^4.19.2",
-    "express-session": "^1.18.0",
-    "mongoose": "^8.5.4"
-  },
-  "devDependencies": {
-    "nodemon": "^3.1.4"
-  },
-  "scripts": {
-    "start": "nodemon index.js"
->>>>>>> a66e289eab2ac66938119a65bef2c368588c5626
   }
 }
