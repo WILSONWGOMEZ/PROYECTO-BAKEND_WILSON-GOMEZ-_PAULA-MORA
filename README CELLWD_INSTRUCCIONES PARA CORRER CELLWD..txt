@@ -44,4 +44,10 @@ instalar en la terminal del proyecto " dotenv"  con el siguiente comando :
 
 npm install dotenv
 
-...............................................................................................................................
+..............................................................................................................................
+
+Instalar las dependencias de vite + reac con los siguientes comandos : 
+
+npm install vite
+
+npm install @vitejs/plugin-react --save-dev
