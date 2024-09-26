@@ -37,3 +37,11 @@ REFRESH_TOKEN_SECRET= proyecto1
 
 Recomendaciones, instalar todas las dependencias de express, instalar nodemon, vite+react, usar MongoDBCompass y usar el editor de texto de visual studio code. 
 
+..........................................................................................................................
+
+En caso de este error " Error: Cannot find module 'dotenv' " 
+instalar en la terminal del proyecto " dotenv"  con el siguiente comando : 
+
+npm install dotenv
+
+...............................................................................................................................
