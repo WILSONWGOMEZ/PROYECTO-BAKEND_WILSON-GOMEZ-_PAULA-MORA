@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarjeta de Celular</title>
     <link rel="stylesheet" href="/css/Tarjetas.css">
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
@@ -13,29 +15,30 @@
     <div class="card">
         <!-- Imagen del celular -->
         <div class="card-img-container">
-            <img src="https://m.media-amazon.com/images/I/51GZMxvwFbL._AC_SL1500_.jpg" class="card-img-top" alt="Sony Xperia 1 IV">
+            <img src="https://www.apple.com/newsroom/images/product/iphone/geo/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907-geo_inline.jpg.large.jpg" class="card-img-top" alt="Iphone 14 Pro">
         </div>
 
         <!-- Detalles del celular -->
         <div class="card-body container">
-            <h5 class="card-title">Sony Xperia 1 IV
-            </h5>
-            <p class="card-text text-justify">
-                El Sony Xperia 1 IV es un smartphone premium que se destaca por sus características únicas orientadas a creadores de contenido y entusiastas de la tecnología. Su pantalla 4K HDR OLED de 120Hz ofrece una calidad de imagen excepcional, especialmente notable para la visualización de contenido 4K y la edición de fotos y videos.
+            <h5 class="card-title">iPhone 14 Pro</h5>
+            <p class="card-text text-justify" id="cardDescription">
+                Descripción: El iPhone 14 Pro es el último dispositivo de Apple, equipado con la última tecnología en cámaras, rendimiento de alta velocidad y pantalla OLED super retina. Diseñado para aquellos que buscan el máximo rendimiento en un smartphone.
             </p>
 
             <h6 class="card-subtitle mb-2 text-muted">Especificaciones</h6>
-            <p class="card-text">
-                Pantalla: 6.5 pulgadas 4K HDR OLED<br>
-                Procesador: Snapdragon 8 Gen 1<br>
-                Memoria: 256GB / 512GB (expandible)<br>
-                RAM: 12GB<br>
-                Cámaras: 12MP principal, 12MP ultra gran angular, 12MP teleobjetivo (3.5x-5.2x óptico continuo)
-                <br> Batería: 5000 mAh
+            <p class="card-text" id="cardSpecifications">
+                Pantalla: 6.1 pulgadas OLED<br>
+                Procesador: A16 Bionic<br>
+                Memoria: 128GB / 256GB / 512GB<br>
+                Cámaras: 48MP principal, 12MP ultra gran angular<br>
+                Batería: 3200 mAh
             </p>
 
+            <!-- Precio del celular -->
+            <p class="card-text" id="cardPrice"><strong>Precio:</strong> $1,099 USD</p>
+
             <!-- Calificación -->
-            <div class="rating">
+            <div class="rating" id="cardRating">
                 <span class="star">&#9733;</span>
                 <span class="star">&#9733;</span>
                 <span class="star">&#9733;</span>
@@ -45,9 +48,9 @@
 
             <!-- Botones CRUD -->
             <div class="container text-center mt-3">
-                <button class="btn btn-warning">Actualizar</button>
-                <button class="btn btn-info">Leer</button>
-                <button class="btn btn-danger">Borrar</button>
+                <button class="btn btn-warning" data-toggle="modal" data-target="#updateModal">Actualizar</button>
+                <button id="leerBtn" class="btn btn-info">Actualizar Imagen</button>
+                <button class="btn btn-danger">Guardar Cambios</button>
             </div>
 
             <!-- Pie de página -->
@@ -67,43 +70,205 @@
 
                         <!-- Botón de volver -->
                         <div class="card-body text-center mt-3">
-                            <a href="index.html" class="btn btn-primary">VOLVER</a>
+                            <a href="http://localhost:3000" class="btn btn-primary">VOLVER</a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+<!-- Modal de Actualización -->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel">Actualizar Información del Celular</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="updateForm">
+                    <div class="form-group">
+                        <label for="updateName">Nombre del Celular</label>
+                        <input type="text" class="form-control" id="updateName" placeholder="Nombre del celular">
+                    </div>
+                    <div class="form-group">
+                        <label for="updateDescription">Descripción</label>
+                        <textarea class="form-control" id="updateDescription" rows="3" placeholder="Descripción del celular"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="updateSpecifications">Especificaciones</label>
+                        <textarea class="form-control" id="updateSpecifications" rows="5" placeholder="Especificaciones del celular"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="updatePrice">Precio</label>
+                        <input type="text" class="form-control" id="updatePrice" placeholder="Precio del celular">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-    <script>
-        function enviarOpiniones() {
-            // Obtener los valores de los campos de entrada
-            var productName = document.getElementById("productNameInput").value;
-            var opinion = document.getElementById("opinionInput").value;
-            var suggestion = document.getElementById("suggestionInput").value;
-            var website = document.getElementById("websiteInput").value;
+<!-- Modal de Lectura -->
+<div class="modal fade" id="readModal" tabindex="-1" role="dialog" aria-labelledby="readModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="readModalLabel">Leer Información del Celular</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <img id="currentImage" src="" alt="Imagen actual del celular" class="img-fluid mb-3">
+                <form id="readForm">
+                    <div class="form-group">
+                        <label for="imageLink">Cambiar imagen (por enlace)</label>
+                        <input type="text" class="form-control" id="imageLink" placeholder="Pegar enlace de imagen">
+                    </div>
+                    <div class="form-group">
+                        <label for="imageUpload">O cargar nueva imagen</label>
+                        <input type="file" class="form-control-file" id="imageUpload">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
-            // Crear un objeto con las opiniones
-            var opiniones = {
-                "productName": productName,
-                "opinion": opinion,
-                "suggestion": suggestion,
-                "website": website
-            };
+<!-- jQuery, Popper.js, y Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
-            // Obtener las opiniones guardadas en el almacenamiento local
-            var storedOpiniones = JSON.parse(localStorage.getItem("opiniones")) || [];
+<script>
+    // Configuración inicial
+    document.addEventListener('DOMContentLoaded', function() {
+        var cellPhoneKey = 'cellPhone8'; // Clave única para Tarjeta1
 
-            // Agregar la nueva opinión a la lista de opiniones guardadas
-            storedOpiniones.push(opiniones);
+        // Obtener datos del almacenamiento local
+        var cellPhone = JSON.parse(localStorage.getItem(cellPhoneKey)) || {
+            name: 'iPhone 14 Pro',
+            description: 'Descripción: El iPhone 14 Pro es el último dispositivo de Apple...',
+            specifications: 'Pantalla: 6.1 pulgadas OLED\nProcesador: A16 Bionic\nMemoria: 128GB / 256GB / 512GB\nCámaras: 48MP principal, 12MP ultra gran angular\nBatería: 3200 mAh',
+            price: '$1,099 USD',
+            image: 'https://www.apple.com/newsroom/images/product/iphone/geo/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907-geo_inline.jpg.large.jpg'
+        };
 
-            // Guardar las opiniones actualizadas en el almacenamiento local
-            localStorage.setItem("opiniones", JSON.stringify(storedOpiniones));
+        // Cargar datos en la tarjeta
+        document.querySelector('.card-title').textContent = cellPhone.name;
+        document.getElementById('cardDescription').innerHTML = cellPhone.description;
+        document.getElementById('cardSpecifications').innerHTML = cellPhone.specifications.replace(/\n/g, '<br>');
+        document.getElementById('cardPrice').innerHTML = `<strong>Precio:</strong> ${cellPhone.price}`;
+        document.querySelector('.card-img-top').src = cellPhone.image;
+    });
 
-            // Redireccionar a la página "Opiniones.html"
-            window.location.href = "Opiniones.html";
+    // Guardar cambios en el almacenamiento local
+    document.getElementById('updateForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+
+        var cellPhoneKey = 'cellPhone8'; // Clave única para Tarjeta1
+
+        var cellPhone = {
+            name: document.getElementById('updateName').value,
+            description: document.getElementById('updateDescription').value,
+            specifications: document.getElementById('updateSpecifications').value,
+            price: document.getElementById('updatePrice').value,
+            image: document.querySelector('.card-img-top').src // Guardar URL de la imagen
+        };
+
+        // Actualizar la tarjeta con los nuevos datos
+        document.querySelector('.card-title').textContent = cellPhone.name;
+        document.getElementById('cardDescription').innerHTML = cellPhone.description;
+        document.getElementById('cardSpecifications').innerHTML = cellPhone.specifications.replace(/\n/g, '<br>');
+        document.getElementById('cardPrice').innerHTML = `<strong>Precio:</strong> ${cellPhone.price}`;
+        document.querySelector('.card-img-top').src = cellPhone.image; // Actualizar imagen
+
+        // Cerrar el modal
+        $('#updateModal').modal('hide');
+
+        // Guardar la actualización en almacenamiento local
+        localStorage.setItem(cellPhoneKey, JSON.stringify(cellPhone));
+    });
+
+    // Prellenar el modal al abrirlo
+    $('#updateModal').on('show.bs.modal', function () {
+        var cellPhoneKey = 'cellPhone8'; // Clave única para Tarjeta1
+
+        var cellPhone = JSON.parse(localStorage.getItem(cellPhoneKey)) || {
+            name: 'iPhone 14 Pro',
+            description: 'Descripción: El iPhone 14 Pro es el último dispositivo de Apple...',
+            specifications: 'Pantalla: 6.1 pulgadas OLED\nProcesador: A16 Bionic\nMemoria: 128GB / 256GB / 512GB\nCámaras: 48MP principal, 12MP ultra gran angular\nBatería: 3200 mAh',
+            price: '$1,099 USD',
+            image: 'https://www.apple.com/newsroom/images/product/iphone/geo/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907-geo_inline.jpg.large.jpg'
+        };
+
+        document.getElementById('updateName').value = cellPhone.name;
+        document.getElementById('updateDescription').value = cellPhone.description;
+        document.getElementById('updateSpecifications').value = cellPhone.specifications;
+        document.getElementById('updatePrice').value = cellPhone.price;
+    });
+
+    // Configuración del modal de lectura
+    document.getElementById('leerBtn').addEventListener('click', function(e) {
+        e.preventDefault(); // Previene la acción por defecto del enlace
+
+        var cellPhoneKey = 'cellPhone8'; // Clave única para Tarjeta1
+
+        var cellPhone = JSON.parse(localStorage.getItem(cellPhoneKey)) || {
+            image: 'https://www.apple.com/newsroom/images/product/iphone/geo/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907-geo_inline.jpg.large.jpg'
+        };
+
+        // Establecer la imagen actual en el modal
+        document.getElementById('currentImage').src = cellPhone.image;
+
+        // Abrir el modal
+        $('#readModal').modal('show');
+    });
+
+    // Guardar cambios en el modal de lectura
+    document.getElementById('readForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var cellPhoneKey = 'cellPhone8'; // Clave única para Tarjeta1
+
+        var nuevoEnlace = document.getElementById('imageLink').value;
+        var archivoSubido = document.getElementById('imageUpload').files[0];
+
+        var cellPhone = JSON.parse(localStorage.getItem(cellPhoneKey)) || {
+            name: 'iPhone 14 Pro',
+            description: 'Descripción: El iPhone 14 Pro es el último dispositivo de Apple...',
+            specifications: 'Pantalla: 6.1 pulgadas OLED\nProcesador: A16 Bionic\nMemoria: 128GB / 256GB / 512GB\nCámaras: 48MP principal, 12MP ultra gran angular\nBatería: 3200 mAh',
+            price: '$1,099 USD',
+            image: 'https://www.apple.com/newsroom/images/product/iphone/geo/Apple-iPhone-14-Pro-iPhone-14-Pro-Max-deep-purple-220907-geo_inline.jpg.large.jpg'
+        };
+
+        if (nuevoEnlace) {
+            cellPhone.image = nuevoEnlace;
+        } else if (archivoSubido) {
+            var lector = new FileReader();
+            lector.onload = function(e) {
+                cellPhone.image = e.target.result;
+                document.querySelector('.card-img-top').src = cellPhone.image; // Actualizar imagen en la tarjeta
+                localStorage.setItem(cellPhoneKey, JSON.stringify(cellPhone)); // Guardar en almacenamiento local
+            }
+            lector.readAsDataURL(archivoSubido);
+            return;
         }
-    </script>
-</body>
 
+        // Guardar en almacenamiento local si no hay archivo subido
+        localStorage.setItem(cellPhoneKey, JSON.stringify(cellPhone));
+
+        // Actualizar la tarjeta con la nueva imagen
+        document.querySelector('.card-img-top').src = cellPhone.image;
+
+        // Cerrar el modal
+        $('#readModal').modal('hide');
+    });
+</script>
+</body>
 </html>

@@ -22,8 +22,12 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
+           
             <li class="nav-item">
                 <a class="nav-link" href="/">Inicio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/apiconecte">Documentacion/Apis</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="/marcas">Marcas</a>
@@ -41,7 +45,7 @@
                 <a class="nav-link" href="/pagos">Metodos de pago</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="/iniciosesion">Administración</a>
+                <a class="nav-link" href=" http://localhost:5173/">Administración</a>
             </li>
         </ul>
     </div>
@@ -175,8 +179,10 @@
         <h2>LOS MAS VENDIDOS</h2>
         <hr>
         <div class="row justify-content-around">
- <!-- Primera fila -->
+ <!-- Primera Tarjeta -->
  <div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+ data-id="1" 
+ data-mongo-id="66ee54a4222c4bf59342a697"
  data-brand="Iphone" 
  data-price="1099.99" 
  data-storage="128GB" 
@@ -202,12 +208,19 @@
     </div>
     <div class="card-footer text-center">
         <a href="/Tarjeta1" class="btn btn-primary">Ver Detalles</a>
+        <button class="btn btn-secondary" onclick="actualizarContenido()">Actualizar</button>
+
     </div>
+   
 </div>
 </div>
 
+
+
 <!-- Segunda Tarjeta -->
 <div class="col-md-6 col-lg-4 col-12 mb-4 product"
+     data-id="2" 
+     data-mongo-id="66ee54b8222c4bf59342a699"
      data-brand="Xiaomi"
      data-price="300"
      data-storage="64GB"
@@ -233,6 +246,7 @@
         </div>
         <div class="card-footer text-center">
             <a href="/Tarjeta2" class="btn btn-primary">Ver Detalles</a>
+            <button class="btn btn-secondary" onclick="actualizarContenido()">Actualizar</button>
         </div>
     </div>
 </div>
@@ -240,6 +254,8 @@
 
 <!-- Tercera -->
 <div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+data-id="3"
+data-mongo-id="66ee5417222c4bf59342a68b" 
 data-brand="Samsung" 
 data-price="349.99" 
 data-storage="128GB" 
@@ -265,12 +281,15 @@ data-warranty="2years">
         </div>
         <div class="card-footer text-center">
             <a href="/Tarjeta3" class="btn btn-primary">Ver Detalles</a>
+            <button class="btn btn-secondary" onclick="actualizarContenido()">Actualizar</button>
         </div>
     </div>
 </div>
 
 <!-- Cuarta -->
-<div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+<div class="col-md-6 col-lg-4 col-12 mb-4 product"
+data-id="4" 
+data-mongo-id="66ee542a222c4bf59342a68d"
 data-brand="Samsung" 
 data-price="1199.99" 
 data-storage="256GB" 
@@ -296,12 +315,15 @@ data-warranty="2years">
         </div>
         <div class="card-footer text-center">
             <a href="/Tarjeta4" class="btn btn-primary">Ver Detalles</a>
+            <button class="btn btn-secondary" onclick="actualizarContenido()">Actualizar</button>
         </div>
     </div>
 </div>
 
 <!-- Quinta -->
-<div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+<div class="col-md-6 col-lg-4 col-12 mb-4 product"
+data-id="5"  
+data-mongo-id="66ee5443222c4bf59342a68f"
     data-brand="Google" 
     data-price="899.99" 
     data-storage="128GB" 
@@ -328,12 +350,15 @@ data-warranty="2years">
         </div>
         <div class="card-footer text-center">
             <a href="/Tarjeta5" class="btn btn-primary">Ver Detalles</a>
+            <button class="btn btn-secondary" onclick="actualizarContenido()">Actualizar</button>
         </div>
     </div>
 </div>
 
 <!-- Sexta -->
 <div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+data-id="6" 
+data-mongo-id="66ee5452222c4bf59342a691"
 data-brand="OnePlus" 
 data-price="799.99" 
 data-storage="256GB" 
@@ -359,12 +384,15 @@ data-warranty="2years">
         </div>
         <div class="card-footer text-center">
             <a href="/Tarjeta6" class="btn btn-primary">Ver Detalles</a>
+            <button class="btn btn-secondary" onclick="actualizarContenido()">Actualizar</button>
         </div>
     </div>
 </div>
 
 <!-- Séptima -->
 <div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+data-id="7" 
+data-mongo-id="66ee5462222c4bf59342a693"
 data-brand="Iphone" 
 data-price="1099.99" 
 data-storage="128GB" 
@@ -390,12 +418,15 @@ data-warranty="1year">
         </div>
         <div class="card-footer text-center">
             <a href="/Tarjeta7" class="btn btn-primary">Ver Detalles</a>
+            <button class="btn btn-secondary" onclick="actualizarContenido()">Actualizar</button>
         </div>
     </div>
 </div>
 
 <!-- Octava -->
 <div  class="col-md-6 col-lg-4 col-12 mb-4 product" 
+data-id="8" 
+data-mongo-id="66ee5473222c4bf59342a695"
     data-brand="Sony" 
     data-price="1299.99" 
     data-storage="256GB" 
@@ -421,12 +452,15 @@ data-warranty="1year">
         </div>
         <div class="card-footer text-center">
             <a href="/Tarjeta8" class="btn btn-primary">Ver Detalles</a>
+            <button class="btn btn-secondary" onclick="actualizarContenido()">Actualizar</button>
         </div>
     </div>
 </div>
 
 <!-- Novena -->
 <div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+data-id="9" 
+data-mongo-id="66ee53ce222c4bf59342a689"
         data-brand="Huawei" 
         data-price="899.99" 
         data-storage="256GB" 
@@ -452,12 +486,15 @@ data-warranty="1year">
         </div>
         <div class="card-footer text-center">
             <a href="/Tarjeta9" class="btn btn-primary">Ver Detalles</a>
+            <button class="btn btn-secondary" onclick="actualizarContenido()">Actualizar</button>
         </div>
     </div>
 </div>
 
 <!-- Décima -->
 <div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+data-id="10" 
+data-mongo-id="66ee5388222c4bf59342a687"
             data-brand="Oppo" 
             data-price="1099.99" 
             data-storage="256GB" 
@@ -483,12 +520,15 @@ data-warranty="1year">
         </div>
         <div class="card-footer text-center">
             <a href="/Tarjeta10" class="btn btn-primary">Ver Detalles</a>
+            <button class="btn btn-secondary" onclick="actualizarContenido()">Actualizar</button>
         </div>
     </div>
 </div>
 
 <!-- Once -->
 <div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+data-id="11" 
+data-mongo-id="66ee5350222c4bf59342a685"
         data-brand="Xiaomi" 
         data-price="749.99" 
         data-storage="256GB" 
@@ -514,12 +554,15 @@ data-warranty="1year">
         </div>
         <div class="card-footer text-center">
             <a href="/Tarjeta11" class="btn btn-primary">Ver Detalles</a>
+            <button class="btn btn-secondary" onclick="actualizarContenido()">Actualizar</button>
         </div>
     </div>
 </div>
 
 <!-- Doce -->
 <div class="col-md-6 col-lg-4 col-12 mb-4 product" 
+data-id="12" 
+data-mongo-id="66ee526b222c4bf59342a680"
             data-brand="Motorola" 
             data-price="799.99" 
             data-storage="256GB" 
@@ -545,6 +588,50 @@ data-warranty="1year">
         </div>
         <div class="card-footer text-center">
             <a href="/Tarjeta12" class="btn btn-primary">Ver Detalles</a>
+            <button class="btn btn-secondary" onclick="actualizarContenido()">Actualizar</button>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateModalLabel">Actualizar Información del Producto</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form id="updateForm">
+                    <div class="form-group">
+                        <label for="productName">Nombre del Producto</label>
+                        <input type="text" class="form-control" id="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productDescription">Descripción</label>
+                        <textarea class="form-control" id="productDescription" rows="3" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="productPrice">Precio</label>
+                        <input type="number" class="form-control" id="productPrice" step="0.01" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productRAM">RAM</label>
+                        <input type="text" class="form-control" id="productRAM" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productStorage">Almacenamiento</label>
+                        <input type="text" class="form-control" id="productStorage" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImage">URL de Imagen</label>
+                        <input type="text" class="form-control" id="productImage" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                </form>
+            </div>
         </div>
     </div>
 </div>
@@ -612,5 +699,10 @@ data-warranty="1year">
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <script src="/js/script.js"></script>
+<script src="/js/scriptmodulos.js"></script>
+<script src="path/to/guardarcambios.js"></script>
+<script src="guardarcambios.js"></script>
+
+
 </body>
 </html>
